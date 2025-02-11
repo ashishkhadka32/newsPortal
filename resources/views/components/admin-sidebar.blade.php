@@ -15,8 +15,8 @@
         <li class="dropdown {{ Request::routeIs('admin.category.*') ? 'active' : '' }}">
             <a href="{{ route('admin.category.index')}}" class="nav-link"><i data-feather="tag"></i><span>Category</span></a>
         </li>
-        <li class="dropdown">
-            <a href="{{ route('dashboard')}}" class="nav-link"><i data-feather="file-plus"></i><span>Article</span></a>
+        <li class="dropdown {{ Request::routeIs('admin.article.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.article.index')}}" class="nav-link"><i data-feather="file-plus"></i><span>Article</span></a>
         </li>
         <li class="dropdown">
             <a href="{{ route('dashboard')}}" class="nav-link"><i data-feather="tv"></i><span>Advertisement</span></a>

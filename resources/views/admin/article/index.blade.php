@@ -3,8 +3,8 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h4>Category DataTables</h4>
-                    <a href="{{ route('admin.category.create') }}" class="btn btn-primary">Add Category</a>
+                    <h4>Article DataTables</h4>
+                    <a href="{{ route('admin.article.create') }}" class="btn btn-primary">Add Articles</a>
 
                 </div>
                 <div class="card-body">
@@ -15,35 +15,40 @@
                                     <th class="text-center">
                                         SN
                                     </th>
-                                    <th>Nepali Title</th>
-                                    <th>English Title</th>
+                                    <th>Title</th>
+                                    <th>Image</th>
+                                    <th>Views</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $index => $category)
+                                @foreach ($articles as $index => $article)
                                     <tr>
                                         <td>
-                                           {{++$index}}
+                                            {{ ++$index }}
                                         </td>
-                                        <td>{{ $category->nep_title }}</td>
-                                        <td>{{ $category->eng_title }}</td>
+                                        <td>{{ $article->title }}</td>
+                                        <td> <img alt="image" src="{{ asset($article->image) }}" width="50" height="50"></td>
+                                        <td>{{ $article->views }}</td>
                                         <td>
-                                            @if ($category->status==true)
-                                             <span class="badge bg-success text-white">active</span>
+                                            @if ($article->status == 'approved')
+                                                <span class="badge bg-success text-white">Approved</span>
+                                            @elseif ($article->status == 'pending')
+                                                <span class="badge bg-primary text-white">Pending</span>
                                             @else
-                                            <span class="badge bg-danger text-white">inactive</span>
+                                                <span class="badge bg-danger text-white">Rejected</span>
                                             @endif
                                         </td>
 
-                                        <td class="d-flex"><a href="{{ route('admin.category.edit', $category->id) }}"
+                                        <td class="d-flex"><a href="{{ route('admin.article.edit', $article->id) }}"
                                                 class="btn btn-success rounded-pill">Edit</a>
-                                            <form action="{{ route('admin.category.destroy', $category->id) }}"
+                                            <form action="{{ route('admin.article.destroy', $article->id) }}"
                                                 method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="sublit" class="btn btn-danger ml-2 rounded-pill">Delete</button>
+                                                <button type="sublit"
+                                                    class="btn btn-danger ml-2 rounded-pill">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

@@ -7,30 +7,47 @@
                         <h4>Edit Category</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.category.update',$category->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.category.update', $category->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="mb-3">
-                                <label for="nep_title" class="form-label text-dark fw-bold">Nep_title<span class="text-danger">*</span></label>
-                                <input type="text" name="nep_title" id="nep_title" class="form-control rounded-pill" value="{{$category->nep_title}}" required>
+                                <label for="nep_title" class="form-label text-dark fw-bold">Nep_title<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" name="nep_title" id="nep_title" class="form-control rounded-pill"
+                                    value="{{ $category->nep_title }}" required>
                             </div>
 
                             <div class="mb-3">
-                                <label for="eng_title" class="form-label text-dark fw-bold">Eng_title<span class="text-danger">*</span></label>
-                                <input type="text" name="eng_title" id="eng_title" class="form-control rounded-pill" value="{{$category->eng_title}}" required>
+                                <label for="eng_title" class="form-label text-dark fw-bold">Eng_title<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" name="eng_title" id="eng_title" class="form-control rounded-pill"
+                                    value="{{ $category->eng_title }}" required>
                             </div>
 
                             <div class="mb-3">
                                 <label for="meta_keywords" class="form-label text-dark fw-bold">Meta Keywords</label>
-                                <textarea name="meta_keywords" id="meta_keywords" class="form-control rounded-pill" value="{{$category->meta_keywords}}">
+                                <textarea name="meta_keywords" id="meta_keywords" class="form-control rounded-pill"
+                                    value="{{ $category->meta_keywords }}">
                                 </textarea>
                             </div>
 
                             <div class="mb-3">
-                                <label for="meta_description" class="form-label text-dark fw-bold">Meta Description</label>
-                                <textarea name="meta_description" id="meta_description" class="form-control rounded-pill" value="{{$category->meta_descriptoin}}">
+                                <label for="meta_description" class="form-label text-dark fw-bold">Meta
+                                    Description</label>
+                                <textarea name="meta_description" id="meta_description" class="form-control rounded-pill"
+                                    value="{{ $category->meta_descriptoin }}">
                                 </textarea>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="status" class="form-label text-dark fw-bold">Status</label>
+                                <select name="status" id="status" class="form-control">
+                                    <option value="1"{{ $category->status == 1 ? 'selected' : '' }}>Active</option>
+                                    <option value="0"{{ $category->status == 0 ? 'selected' : '' }}>In Active</option>
+                                </select>
+                            </div>
+
                             <div class="mb-3 text-center">
                                 <button type="submit" class="btn btn-primary rounded-pill">Update</button>
                             </div>

@@ -71,6 +71,7 @@ class categoryController extends Controller
         $category->slug = Str::slug($request->eng_title);
         $category->meta_keywords = $request->meta_keywords;
         $category->meta_description = $request->meta_description;
+        $category->status = $request->status;
         $category->update();
         return redirect()->route("admin.category.index");
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\articleController;
 use App\Http\Controllers\Admin\categoryController;
 use App\Http\Controllers\Admin\companyController;
 use App\Http\Controllers\ProfileController;
@@ -23,7 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/company', companyController::class)->names('admin.company');//admin folder vitra company folder vitra ko files
     //u can write only company also.
     Route::resource('/admin/category', categoryController::class)->names('admin.category');
-
+    Route::resource('/admin/article', articleController::class)->names('admin.article');
 
 });
 

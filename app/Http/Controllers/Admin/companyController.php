@@ -103,6 +103,5 @@ class companyController extends Controller
         unlink($company->logo);
         $company->delete();
         return redirect()->back();
-
     }
 }
