@@ -3,13 +3,11 @@
 use App\Http\Controllers\Admin\articleController;
 use App\Http\Controllers\Admin\categoryController;
 use App\Http\Controllers\Admin\companyController;
+use App\Http\Controllers\Frontend\pageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/',[pageController::class, 'home'])->name('home');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -27,5 +25,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/article', articleController::class)->names('admin.article');
 
 });
+
 
 require __DIR__.'/auth.php';

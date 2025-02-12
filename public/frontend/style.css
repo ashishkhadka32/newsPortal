@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap');
+
+:root
+{
+    --primary:#642671;
+    --light-primry:#6426711a;
+    --secondary:#be2171;
+}
+
+body
+{
+    font-family: "Tiro Devanagari Sanskrit", serif;
+}
+
+.container
+{
+    width: 80%;
+    margin: auto;
+}
+
+.primary
+{
+    color: var(--primary);
+}
+
+.bg-primary
+{
+    background-color: var(--primary);
+}
+
+.bg-light-primary
+{
+    background-color: var(--light-primry);
+}
+
+.secondary
+{
+    color: var(--secondary);
+}
+
+.active
+{
+    color: var(--secondary);
+}
+
