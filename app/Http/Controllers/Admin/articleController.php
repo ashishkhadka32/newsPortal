@@ -45,7 +45,7 @@ class articleController extends Controller
             $article->image = "images/$filename";
         }
         $article->save();
-        $article->categories()->attach($request->categories);
+        $article->categories()->attach($request->categories);//all req->categories will create new
         return redirect()->route('admin.article.create');
     }
 
@@ -92,7 +92,7 @@ class articleController extends Controller
 
         }
         $article->update();
-        $article->categories()->attach($request->categories);
+        $article->categories()->sync($request->categories);
         return redirect()->route('admin.article.index');
     }
 
