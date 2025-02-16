@@ -1,11 +1,11 @@
 <section>
     <div class="container flex justify-between items-center py-2">
         <div>
-            <img class="h-[40px] md:h-[60px] lg:h[80px]" src="{{ asset($company->logo) }}" alt="helo">
+            <img class="h-[40px] md:h-[60px] lg:h-[80px]" src="{{ asset($company->logo) }}" alt="helo">
         </div>
         <div>
             {{ nepalidate(now()) }}
-            <img class="h-[6px] md:h-[14px]" src="frontend/img/line.png" alt="line">
+            <img class="h-[6px] md:h-[14px]" src="/frontend/img/line.png" alt="line">
         </div>
     </div>
 </section>
@@ -19,7 +19,7 @@
                 </li>
                 @foreach ($categories as $category)
                     <li>
-                        <a href="">{{ $category->nep_title }}</a>
+                        <a href="{{ route('category',$category->slug) }}">{{ $category->nep_title }}</a>
                     </li>
                 @endforeach
             </ul>
@@ -102,7 +102,7 @@
         </li>
         @foreach ($categories as $category)
             <li>
-                <a href="">{{ $category->nep_title }}</a>
+                <a href="{{ route('category', $category->slug) }}">{{ $category->nep_title }}</a>
             </li>
         @endforeach
     </ul>

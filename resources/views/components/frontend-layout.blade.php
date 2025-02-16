@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="sticky top-0 z-10 bg-white">
         <x-frontend-navbar />
     </header>
 
@@ -21,7 +21,9 @@
         {{ $slot }}
     </main>
 
-    <footer></footer>
+    <footer>
+        <x-frontend-footer/>
+    </footer>
 </body>
 
 </html>
