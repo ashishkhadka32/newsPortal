@@ -17,7 +17,10 @@
                     </div>
                 </div>
                 <div class="md:col-span-4">
+                    @foreach ($advertises as $advertise)
+                    <img src="{{asset($advertise->image)}}" alt="">
 
+                    @endforeach
                 </div>
             </div>
         </div>
