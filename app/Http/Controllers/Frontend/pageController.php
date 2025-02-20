@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use App\Models\advertise;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Company;
@@ -27,7 +28,8 @@ class pageController extends baseController
         // $category = Article::where('slug',$slug)->get();get is used when u use any query like orderby and so on al data is shown in array
         $category = Category::where('slug',$slug)->first();//first slug will see in db and $slug is value.it will show data in object
         $articles = $category->articles()->paginate(10);
-        return view('frontend.category', compact('articles'));
+        $advertises = advertise::where('status',"approved")->get();
+        return view('frontend.category', compact('articles','advertises'));
     }
     public function article($id)
     {

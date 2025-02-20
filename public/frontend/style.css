@@ -58,5 +58,5 @@ body
 .straight_line {
     border: 1px solid var(--primary);
     overflow: hidden;
-    margin: 20px;
+    margin-bottom: 20px;
 }

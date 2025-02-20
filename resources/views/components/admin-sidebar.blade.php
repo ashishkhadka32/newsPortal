@@ -19,7 +19,7 @@
             <a href="{{ route('admin.article.index')}}" class="nav-link"><i data-feather="file-plus"></i><span>Article</span></a>
         </li>
         <li class="dropdown">
-            <a href="{{ route('dashboard')}}" class="nav-link"><i data-feather="tv"></i><span>Advertisement</span></a>
+            <a href="{{ route('admin.advertise.index')}}" class="nav-link"><i data-feather="tv"></i><span>Advertisement</span></a>
         </li>
     </ul>
 </aside>

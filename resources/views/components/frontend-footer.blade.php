@@ -5,7 +5,8 @@
             <div class="border border-white p-5 text-white text-center">
                 <h4>जवाफ डिजिटल पत्रिका</h4>
                 <div class="flex justify-center">
-                    <img src="https://jawaaf.com/storage/01J9BSJH17BYEFCMMXFTW2FQ2K.png" width="220" alt="https://jawaaf.com/storage/01JF6CJYGS53X1S7DZ5XKFC705.png">
+                    <img src="https://jawaaf.com/storage/01J9BSJH17BYEFCMMXFTW2FQ2K.png" width="220"
+                        alt="https://jawaaf.com/storage/01JF6CJYGS53X1S7DZ5XKFC705.png">
                 </div>
                 <p>अध्यक्ष <br>
                     <b>रत्न कला राई</b>
@@ -61,6 +62,12 @@
             <div class="border border-white p-5 h-full">
                 <div class="text-center text-white text-lg">
                     <h1>सामाजिक सञ्जालमा</h1>
+                    <div class="fb-page" data-href="https://www.facebook.com/jawaafnews" data-tabs="" data-width=""
+                        data-height="" data-small-header="false" data-adapt-container-width="true"
+                        data-hide-cover="false" data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/jawaafnews" class="fb-xfbml-parse-ignore"><a
+                                href="https://www.facebook.com/jawaafnews">Jawaaf</a></blockquote>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,5 +78,3 @@
     <p class="text-center text-white">Copyright © 2025 कोपिला मिडिया हाउस प्रा. लि.. All
         Rights Reserved.</p>
 </div>
-
-
