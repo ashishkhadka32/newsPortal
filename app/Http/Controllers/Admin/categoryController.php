@@ -6,6 +6,9 @@ use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\emailNotification;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 
 class categoryController extends Controller
 {
@@ -38,6 +41,16 @@ class categoryController extends Controller
         $category->meta_keywords = $request->meta_keywords;
         $category->meta_description = $request->meta_description;
         $category->save();
+
+        $data =[
+            "subject" => "Change category status request",
+            "message" => "New category has been added. Please review and change the status of category.",
+        ];
+
+        $admins = User::all();//mail to all admins which are registered
+
+        Mail::to($admins)->send(new emailNotification($data));//mail from email notification. data will send to emailNotification
+
         return redirect()->route("admin.category.index");
     }
 
