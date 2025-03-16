@@ -14,18 +14,18 @@
     <div class="container">
         <div class="hidden md:flex items-center justify-between">
             <ul class="flex gap-10 text-xl">
-                <li class="active">
+                <li class="{{ Request::routeIs('home') ? 'active' : '' }}">
                     <a href="{{ route('home') }}">गृहपृष्ठ</a>
                 </li>
                 @foreach ($categories as $category)
-                    <li>
-                        <a href="{{ route('category',$category->slug) }}">{{ $category->nep_title }}</a>
+                    <li class="{{ request()->is('category/' . $category->slug) ? 'active' : '' }}">
+                        <a href="{{ route('category', $category->slug) }}">{{ $category->nep_title }}</a>
                     </li>
                 @endforeach
             </ul>
 
             <div class="w-[25%]">
-                <form action="{{route('search')}}" method="GET">
+                <form action="{{ route('search') }}" method="GET">
                     <label for="default-search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div class="relative">
@@ -61,4 +61,3 @@
 </nav>
 
 <!-- drawer component -->
-

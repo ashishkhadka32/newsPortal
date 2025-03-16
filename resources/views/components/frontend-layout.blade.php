@@ -16,7 +16,7 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v22.0">
     </script>
-    <header class="sticky top-0 z-10 bg-white">
+    <header class="sticky top-0 z-50 bg-white">
         <x-frontend-navbar />
     </header>
     <div id="drawer-example"
